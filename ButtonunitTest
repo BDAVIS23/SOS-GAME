@@ -1,0 +1,360 @@
+import unittest
+
+import tkinter as tk
+from tkinter import filedialog, Text
+import os
+
+import SOS_GameGrid_sprint2
+
+
+class Test_test_button0S(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange0= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange0
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button0O(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange0= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange0
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+class Test_test_button1s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange1= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange1
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button1o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange1= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange1
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+
+
+class Test_test_button2s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange2= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange2
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button2o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange2= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange2
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+
+class Test_test_button3s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange3= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange3
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button3o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange3= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange3
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+
+
+class Test_test_button4s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange4= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange4
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button4o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange4= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange4
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+
+
+class Test_test_button5s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange5= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange5
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button5o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange5= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange5
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+
+
+class Test_test_button6s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange6= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange6
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button6o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange6= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange6
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+
+class Test_test_button7s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange7= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange7
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button7o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange7= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange7
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+class Test_test_button8s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange8= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange8
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button8o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange8= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange8
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+class Test_test_button9s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange9= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange9
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button9o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange9= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange9
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+
+class Test_test_button10s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange10= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange10
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button10o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange10= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange10
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+
+class Test_test_button11s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange11= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange11
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button11o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange11= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange11
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+class Test_test_button12s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange12= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange12
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button12o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange12= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange12
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+class Test_test_button13s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange13= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange13
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button13o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange13= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange13
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+
+
+
+class Test_test_button14s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange14= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange14
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button14o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange14= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange14
+       
+       self.assertEqual(buttonchange0,'O')
+       
+
+
+
+
+
+
+class Test_test_button15s(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange15= 'S'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange15
+       
+       self.assertEqual(buttonchange0,'S')
+       
+      
+class Test_test_button15o(unittest.TestCase):
+    def test_Update_SOB0(self):
+       SOS_GameGrid_sprint2.ButtonChange15= 'O'
+      
+       buttonchange0 = SOS_GameGrid_sprint2.ButtonChange15
+       
+       self.assertEqual(buttonchange0,'O')
+       
+       
+       
