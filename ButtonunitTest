@@ -356,5 +356,66 @@ class Test_test_button15o(unittest.TestCase):
        
        self.assertEqual(buttonchange0,'O')
        
-       
+      
+
+
+class Test_test_Changeturneven(unittest.TestCase):
+    def test_changeturn(self):
+        SOS_GameGrid_sprint2.RB=0
+        turnvalue= SOS_GameGrid_sprint2.RB % 2
+        self.assertEqual(turnvalue,0)
+
+class Test_test_Changeturnodds(unittest.TestCase):
+    def test_changeturn(self):
+        SOS_GameGrid_sprint2.RB=1
+        turnvalue= SOS_GameGrid_sprint2.RB % 2
+        self.assertEqual(turnvalue,1)
+
+
+
+class Test_test_gameselectsimple(unittest.TestCase):
+    def test_gameselect(self):
+        SOS_GameGrid_sprint2.Gametype=0
+        gametype= SOS_GameGrid_sprint2.Gametype
+        self.assertEqual(gametype,0)
+
+
+class Test_test_gameselectgeneral(unittest.TestCase):
+    def test_gameselect(self):
+        SOS_GameGrid_sprint2.Gametype=1
+        gametype= SOS_GameGrid_sprint2.Gametype
+        self.assertEqual(gametype,1)
+
+
+
+
+class Test_test_blueplayertypehuman(unittest.TestCase):
+    def test_playertype(self):
+        SOS_GameGrid_sprint2.Blueplayer=0
+        playertype= SOS_GameGrid_sprint2.Blueplayer
+        self.assertEqual(playertype,0)
+
+
+
+
+class Test_test_blueplayertypecomputer(unittest.TestCase):
+    def test_playertype(self):
+        SOS_GameGrid_sprint2.Blueplayer=1
+        playertype= SOS_GameGrid_sprint2.Blueplayer
+        self.assertEqual(playertype,1)
+
+
+
+class Test_test_redplayertypehuman(unittest.TestCase):
+    def test_playertype(self):
+        SOS_GameGrid_sprint2.Redplayer=0
+        playertype= SOS_GameGrid_sprint2.Redplayer
+        self.assertEqual(playertype,0)
+
+
+class Test_test_redplayertypecomputer(unittest.TestCase):
+    def test_playertype(self):
+        SOS_GameGrid_sprint2.Redplayer=1
+        playertype= SOS_GameGrid_sprint2.Redplayer
+        self.assertEqual(playertype,1)
        
