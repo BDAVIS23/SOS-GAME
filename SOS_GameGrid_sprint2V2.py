@@ -62,77 +62,6 @@ changeturn()
 
 turntext=tk.Label(root,textvariable=currentturn)
 turntext.grid(row=10, column=3)
-
-
-# Buttons
-
-
-
-
-
-# Row 1
-
-
-
-
-B0=tk.Button(root,textvariable=ButtonChange0, width=10, height=5, command=Update_SOB0)
-B0.grid(row=2, column=1, sticky='NESW')
-
-B1=tk.Button(root,textvariable=ButtonChange1, width=10, height=5, command=Update_SOB1)
-B1.grid(row=2, column=2 ,sticky='NESW')
-
-B2=tk.Button(root,textvariable=ButtonChange2, width=10, height=5, command=Update_SOB2)
-B2.grid(row=2, column=3 ,sticky='NESW')
-
-B3=tk.Button(root,textvariable=ButtonChange3, width=10, height=5, command=Update_SOB3)
-B3.grid(row=2, column=4 ,sticky='NESW')
-
-# Row 2
-
-B4=tk.Button(root,textvariable=ButtonChange4, width=10, height=5, command=Update_SOB4)
-B4.grid(row=3, column=1 ,sticky='NESW')
-
-B5=tk.Button(root,textvariable=ButtonChange5, width=10, height=5, command=Update_SOB5)
-B5.grid(row=3, column=2 ,sticky='NESW')
-
-B6=tk.Button(root,textvariable=ButtonChange6, width=10, height=5, command=Update_SOB6)
-B6.grid(row=3, column=3 ,sticky='NESW')
-
-B7=tk.Button(root,textvariable=ButtonChange7, width=10, height=5, command=Update_SOB7)
-B7.grid(row=3, column=4 ,sticky='NESW')
-
-# Row 3
-
-B8=tk.Button(root,textvariable=ButtonChange8, width=10, height=5, command=Update_SOB8)
-B8.grid(row=4, column=1 ,sticky='NESW')
-
-B9=tk.Button(root,textvariable=ButtonChange9, width=10, height=5, command=Update_SOB9)
-B9.grid(row=4, column=2 ,sticky='NESW')
-
-B10=tk.Button(root,textvariable=ButtonChange10, width=10, height=5, command=Update_SOB10)
-B10.grid(row=4, column=3 ,sticky='NESW')
-
-B11=tk.Button(root,textvariable=ButtonChange11, width=10, height=5, command=Update_SOB11)
-B11.grid(row=4, column=4 ,sticky='NESW')
-
-# Row 4
-
-B12=tk.Button(root,textvariable=ButtonChange12, width=10, height=5, command=Update_SOB12)
-B12.grid(row=4, column=1 ,sticky='NESW')
-
-B13=tk.Button(root,textvariable=ButtonChange13, width=10, height=5, command=Update_SOB13)
-B13.grid(row=4, column=2 ,sticky='NESW')
-
-B14=tk.Button(root,textvariable=ButtonChange14, width=10, height=5, command=Update_SOB14)
-B14.grid(row=4, column=3 ,sticky='NESW')
-
-B15=tk.Button(root,textvariable=ButtonChange15, width=10, height=5, command=Update_SOB15)
-B15.grid(row=4, column=4 ,sticky='NESW')
-
-
-
-
-
          
 
 
@@ -542,6 +471,71 @@ def Update_SOB15():
 
 
 
+
+# Buttons
+
+
+
+
+
+# Row 1
+
+
+
+
+B0=tk.Button(root,textvariable=ButtonChange0, width=10, height=5, command=Update_SOB0)
+B0.grid(row=2, column=1, sticky='NESW')
+
+B1=tk.Button(root,textvariable=ButtonChange1, width=10, height=5, command=Update_SOB1)
+B1.grid(row=2, column=2 ,sticky='NESW')
+
+B2=tk.Button(root,textvariable=ButtonChange2, width=10, height=5, command=Update_SOB2)
+B2.grid(row=2, column=3 ,sticky='NESW')
+
+B3=tk.Button(root,textvariable=ButtonChange3, width=10, height=5, command=Update_SOB3)
+B3.grid(row=2, column=4 ,sticky='NESW')
+
+# Row 2
+
+B4=tk.Button(root,textvariable=ButtonChange4, width=10, height=5, command=Update_SOB4)
+B4.grid(row=3, column=1 ,sticky='NESW')
+
+B5=tk.Button(root,textvariable=ButtonChange5, width=10, height=5, command=Update_SOB5)
+B5.grid(row=3, column=2 ,sticky='NESW')
+
+B6=tk.Button(root,textvariable=ButtonChange6, width=10, height=5, command=Update_SOB6)
+B6.grid(row=3, column=3 ,sticky='NESW')
+
+B7=tk.Button(root,textvariable=ButtonChange7, width=10, height=5, command=Update_SOB7)
+B7.grid(row=3, column=4 ,sticky='NESW')
+
+# Row 3
+
+B8=tk.Button(root,textvariable=ButtonChange8, width=10, height=5, command=Update_SOB8)
+B8.grid(row=4, column=1 ,sticky='NESW')
+
+B9=tk.Button(root,textvariable=ButtonChange9, width=10, height=5, command=Update_SOB9)
+B9.grid(row=4, column=2 ,sticky='NESW')
+
+B10=tk.Button(root,textvariable=ButtonChange10, width=10, height=5, command=Update_SOB10)
+B10.grid(row=4, column=3 ,sticky='NESW')
+
+B11=tk.Button(root,textvariable=ButtonChange11, width=10, height=5, command=Update_SOB11)
+B11.grid(row=4, column=4 ,sticky='NESW')
+
+# Row 4
+
+B12=tk.Button(root,textvariable=ButtonChange12, width=10, height=5, command=Update_SOB12)
+B12.grid(row=4, column=1 ,sticky='NESW')
+
+B13=tk.Button(root,textvariable=ButtonChange13, width=10, height=5, command=Update_SOB13)
+B13.grid(row=4, column=2 ,sticky='NESW')
+
+B14=tk.Button(root,textvariable=ButtonChange14, width=10, height=5, command=Update_SOB14)
+B14.grid(row=4, column=3 ,sticky='NESW')
+
+B15=tk.Button(root,textvariable=ButtonChange15, width=10, height=5, command=Update_SOB15)
+B15.grid(row=4, column=4 ,sticky='NESW')
 
 
 
