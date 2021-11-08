@@ -3,7 +3,7 @@
 import tkinter as tk
 from tkinter import filedialog, Text
 import os
-
+from functools import partial
 
 #                               CREATION OF THE ROOT, GRID AND TEXT
 
@@ -12,8 +12,8 @@ import os
 root=tk.Tk()
 
 root.title('SOS Game')
-root.geometry('525x400')
-f=tk.Frame(root)
+root.geometry('1000x600')
+
 # choosing the grid size
 col_count, row_count = root.grid_size()
 
@@ -23,16 +23,65 @@ for col in range(col_count):
 for row in range(row_count):
     root.grid_rowconfigure(row, minsize=20)
 
-    # labels for the players and game
+    # labels for the players 
 
-PlayerL1=tk.Label(root,text="Blue Player:")
-PlayerL1.grid(row=0,column=0 ,sticky='NESW')
 
-PlayerL2=tk.Label(root,text="Red Player:")
-PlayerL2.grid(row=0,column=12 ,sticky='NESW')
+Player1=tk.Label(root,text="Blue Player:")
+Player1.grid(row=0,column=0 ,sticky='NESW')
+
+Player2=tk.Label(root,text="Red Player:")
+Player2.grid(row=0,column=12 ,sticky='NESW')
 
 Gamelabel=tk.Label(root,text="Game Type:")
 Gamelabel.grid(row=0,column=1 ,sticky='NESW')
+
+turnlabel=tk.Label(root,text="Current Turn:")
+turnlabel.grid(row=10, column=1,columnspan=2, sticky='NESW')
+
+sizelabel=tk.Label(root,text="Board Size")
+sizelabel.grid(row=10, column=6, sticky='NESW')
+
+#  TURN COUNTER AND CHANGE TURN FUNCTION
+
+
+
+currentturn=tk.StringVar()
+
+
+RB=int(0)
+
+def changeturn():
+   global RB
+   global button_free
+   #buttonbool=button([i][j])
+   if RB % 2 ==0 and button_free==True:
+    currentturn.set("Blue Player")
+    RB+=1
+    
+   elif RB % 2 ==1 and button_free==False:
+    currentturn.set("Red Player")
+    RB+=1
+    
+    
+
+
+turntext=tk.Label(root,textvariable=currentturn)
+turntext.grid(row=10, column=3)
+
+
+
+
+
+
+
+
+
+
+
+         
+
+
+
 
 # Game type selection
 
@@ -120,69 +169,193 @@ RedO.grid(row=4, column=12 ,sticky='NESW') #adjust location of button
 replaybutton = tk.Button(root, text= 'Replay', width =10, height=1) # replay button gui
 replaybutton.grid(row=9,column=12 ,sticky='NESW')
 
-newgamebutton = tk.Button(root, text= 'New Game', width =10, height=1) # new game button gui
+
+
+      
+
+
+
+
+
+ButtonChange=tk.StringVar()
+
+
+boardsize= tk.Entry(root,width=5)
+boardsize.grid(row=10, column =9 , stick='NESW')
+
+
+def gameboard_create():
+   global size
+   size=int(boardsize.get())
+   if size>2:
+    
+    
+    
+    global  board
+    board = []
+    for i in range(size):
+        m= i+2
+        board.append(i)
+        board[i]=[]
+        for j in range(size):
+            n=j+1
+            board[i].append(j)
+            board[i][j]=tk.Button(root,width=10,height=5,text='',command=partial(Update_SOB0,i,j,currentturn,Blueletter,Blueplayer,Redletter,Redplayer,checksos,Gametype))
+            board[i][j].grid(row=m,column=n)
+   elif size <= 2 :
+    print("Board size must be greater then 2")
+   elif size =='':
+       print("Board size can't be null")
+
+         
+
+
+newgamebutton = tk.Button(root, text= 'New Game', width =10, height=1, command=gameboard_create) # new game button gui
 newgamebutton.grid(row=10,column=12 ,sticky='NESW')
 
-#                                       Game Board Buttons
 
-# Row 1
+def popup_win(currentturn):
+    Winner=currentturn.get()
+    win=tk.Toplevel(root)
+    #popup_win.tkraise(root)
+    win.title("Winner")
+    tk.Label(win,text= Winner + " is the winner!").pack(side="top", fill="x")
+    #tk.Button(win,text="Okay",command=popup_win.destroy).pack()
 
-B0=tk.Button(root,text=" ", width=10, height=5)
-B0.grid(row=2, column=1, sticky='NESW')
 
-B1=tk.Button(root,text=" ", width=10, height=5)
-B1.grid(row=2, column=2 ,sticky='NESW')
 
-B2=tk.Button(root,text=" ", width=10, height=5)
-B2.grid(row=2, column=3 ,sticky='NESW')
 
-B3=tk.Button(root,text=" ", width=10, height=5)
-B3.grid(row=2, column=4 ,sticky='NESW')
+def checksos(i,j,Gametype,currentturn,Redplayer,Blueplayer):
+    w = len(board[i])
+    h = len(board[j])
+    blucnt=(board[i])
+    redcnt=(board[i])
 
-# Row 2
+    
+    draw=0
+    
+    # Check for horizontals.
+    
+    for row in board:
+        s = ''.join([cell['text'] for cell in row])
+        if 'SOS' in s:
+            print("found horizontal sos")
+            if Gametype.get()==1:
+                popup_win(currentturn)
+            #elif Gametype.get()==2 and Blueplayer.get()==1 and currentturn.get()== "Blue Player":
+            #    next(blucnt)
+            #    print(blucnt)
+                
+                
+            #elif Gametype.get()==2 and Redplayer.get()==1 and currentturn.get()== "Red Player":
+            #    next(redcnt)               
+            #    print(redcnt)
+              
+                
 
-B0=tk.Button(root,text=" ", width=10, height=5)
-B0.grid(row=3, column=1 ,sticky='NESW')
+                
+                
+        
+    # Check for verticals.
 
-B1=tk.Button(root,text=" ", width=10, height=5)
-B1.grid(row=3, column=2 ,sticky='NESW')
+    for col in range(w):
+        s = ''.join([board[i][col]['text'] for i in range(h)])
+        if 'SOS' in s:
+            print("found vertical sos")
+            if Gametype.get()==1:
+                popup_win(currentturn)
+            #elif Gametype.get()==2 and Blueplayer.get()==1 and currentturn.get()== "Blue Player":
+            #    blucnt+=1
+            #    print("blue count is " + blucnt)
+            #elif Gametype.get()==2 and Redplayer.get()==1 and currentturn.get()== "Red Player":
+            #    redcnt +=1
+            #    print("red count is" + redcnt)
+      
+    # Check for diagonals.  There are N-2 diagonals in each direction;
+    # the outermost 2 are too short to hold SOS.
 
-B2=tk.Button(root,text=" ", width=10, height=5)
-B2.grid(row=3, column=3 ,sticky='NESW')
+    for offset in range(0,w-2):
+        # Start from the top and go SE.  If offset is 1, the
+        # first string gets 1,0 then 2,1 then 3,2; the other
+        # string gets 0,1 then 1,2 then 2,3.
+        s1 = []
+        s2 = []
+        s3 = []
+        s4 = []
+        for i in range(0,w-offset):
+            s1.append( board[i+offset][i]['text'] )
+            s2.append( board[i][i+offset]['text'] )
+            s3.append( board[i+offset][w-i-1]['text'] )
+            s4.append( board[h-i-1][i+offset]['text'] )
+        if 'SOS' in ''.join(s1) or 'SOS' in ''.join(s2) or \
+           'SOS' in ''.join(s3) or 'SOS' in ''.join(s4):
+            print("found diagonal sos")
+            if Gametype.get()==1:
+                popup_win(currentturn)
+            #elif Gametype.get()==2 and Blueplayer.get()==1 and currentturn.get()== "Blue Player":
+            #    blucnt+=1
+            #    print("blue count is" + blucnt)
+            #elif Gametype.get()==2 and Redplayer.get()==1 and currentturn.get()== "Red Player":
+            #    redcnt +=1
+            #    print("red count is " + redcnt)
+      
 
-B3=tk.Button(root,text=" ", width=10, height=5)
-B3.grid(row=3, column=4 ,sticky='NESW')
 
-# Row 3
+        
 
-B0=tk.Button(root,text=" ", width=10, height=5)
-B0.grid(row=4, column=1 ,sticky='NESW')
 
-B1=tk.Button(root,text=" ", width=10, height=5)
-B1.grid(row=4, column=2 ,sticky='NESW')
 
-B2=tk.Button(root,text=" ", width=10, height=5)
-B2.grid(row=4, column=3 ,sticky='NESW')
+button_free = True
+changeturn()
+def Update_SOB0(i,j,currentturn,Blueletter,Blueplayer,Redletter,Redplayer,checksos,Gametype):
+    global button_free
+    buttontext=(board[i][j]) 
+    if currentturn.get() =="Blue Player" and Blueletter.get()==1 and Blueplayer.get()==1 and button_free==True and buttontext["text"]=='':
+        buttontext.configure(text='S')
+        button_free= False
+        
+        checksos(i,j,Gametype,currentturn,Redplayer,Blueplayer)
+        changeturn()
+        
+    elif currentturn.get() =="Blue Player" and Blueletter.get()==2 and Blueplayer.get()==1 and button_free==True and buttontext["text"]=='':
+        buttontext.configure(text='O')
+        button_free= False
+        
+        checksos(i,j,Gametype,currentturn,Redplayer,Blueplayer)
+        changeturn()
+       
+    elif currentturn.get() =="Red Player" and Redletter.get()==1 and Redplayer.get()==1 and button_free==False and buttontext["text"]=='':
+        buttontext.configure(text='S')
+        button_free= True
+        
+        checksos(i,j,Gametype,currentturn,Redplayer,Blueplayer)
+        changeturn()
 
-B3=tk.Button(root,text=" ", width=10, height=5)
-B3.grid(row=4, column=4 ,sticky='NESW')
+    elif currentturn.get() =="Red Player" and Redletter.get()==2 and Redplayer.get()==1 and button_free==False and buttontext["text"]=='':
+        buttontext.configure(text='O')
+        button_free= True
+        
+        checksos(i,j,Gametype,currentturn,Redplayer,Blueplayer)
+        changeturn()
 
-# Row 4
 
-B0=tk.Button(root,text=" ", width=10, height=5)
-B0.grid(row=4, column=1 ,sticky='NESW')
 
-B1=tk.Button(root,text=" ", width=10, height=5)
-B1.grid(row=4, column=2 ,sticky='NESW')
 
-B2=tk.Button(root,text=" ", width=10, height=5)
-B2.grid(row=4, column=3 ,sticky='NESW')
 
-B3=tk.Button(root,text=" ", width=10, height=5)
-B3.grid(row=4, column=4 ,sticky='NESW')
+
+
+
+
+
+
+
+
+
 
 
 root.mainloop()
+
+
 
 
 
